@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BallShooting Game</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="score-container">
+            <div class="score-wrap">
+                <p>Score: <span id="score" class="score">0</span></p>
+                <p>
+                    Missed:
+                    <span id="missed-score" class="missed-score">0</span>
+                </p>
+                <p>
+                    Hit By Shark:
+                    <span id="hit-by-shark" class="hit-by-shark">0</span>
+                </p>
+                <p>
+                    Total Fails:
+                    <span id="total-fails" class="total-fails">0</span>
+                </p>
+            </div>
+        </div>
+        <div id="container" class="game-area"></div>
+
+        <button id="start-game" class="start-game">Start</button>
+
+        <audio id="shooting-audio" controls>
+            <source src="sound/shooting.mp3" type="audio/mp3" />
+        </audio>
+        <audio id="lost-audio" controls>
+            <source src="sound/missed.mp3" type="audio/mp3" />
+        </audio>
+        <audio id="game-background" loop>
+            <source src="sound/game-background.mp3" type="audio/mp3" />
+        </audio>
+        <script src="game.js"></script>
+    </body>
+</html>

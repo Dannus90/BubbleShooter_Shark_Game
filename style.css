@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.game-area {
+    border: 1px solid grey;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: url("./assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    top: -200px;
+    border-radius: 50%;
+    background-color: hotpink;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.score-container {
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 50px;
+    z-index: 1;
+    font-weight: bold;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+}
+
+.score-wrap {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    width: 200px;
+    padding: 16px 0;
+    border-radius: 10px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.score-wrap p {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-wrap p:last-child {
+    text-align: center;
+}
+
+.missed-score {
+    color: red;
+    font-size: 16px;
+}
+
+.hit-by-shark {
+    color: red;
+    font-size: 16px;
+}
+
+.total-fails {
+    color: red;
+}
+
+.score {
+    color: chartreuse;
+}
+
+.start-game {
+    position: absolute;
+    background-color: purple;
+    color: #fff;
+    z-index: 2;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.4);
+}
+
+.start-game:active {
+    outline: none;
+}
+
+/*
+ * Ball style override to beautify it, can be removed.
+ */
+.ball {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
+        inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
+        inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2),
+        inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+
+    height: 100px;
+    position: absolute;
+    width: 100px;
+}
+
+.ball:after {
+    background: -moz-radial-gradient(
+        center,
+        ellipse cover,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    background: -webkit-gradient(
+        radial,
+        center center,
+        0px,
+        center center,
+        100%,
+        color-stop(0%, rgba(255, 255, 255, 0.5)),
+        color-stop(70%, rgba(255, 255, 255, 0))
+    );
+    background: -webkit-radial-gradient(
+        center,
+        ellipse cover,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    background: -o-radial-gradient(
+        center,
+        ellipse cover,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    background: -ms-radial-gradient(
+        center,
+        ellipse cover,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0) 40%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 );
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+    content: "";
+    height: 100px;
+    left: 0;
+    position: absolute;
+    width: 100px;
+}
+
+/* Shark style*/
+.shark-1 {
+    background: url(./assets/Shark-1.png);
+    position: absolute;
+    left: -300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 7rem;
+    width: 7rem;
+}
+
+.shark-2 {
+    background: url(./assets/Shark-2.png);
+    position: absolute;
+    left: -300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 7rem;
+    width: 11rem;
+}
+
+/* Audio Elements */
+#shooting-audio,
+#lost-audio,
+#game-background {
+    display: none;
+}
+
+/* Popup modal at game over */
+.modal {
+    height: 20rem;
+    width: 20rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lost-game-text {
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.final-score {
+    font-size: 1.4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 18%;
+    right: 35.5%;
+    font-weight: bold;
+}
