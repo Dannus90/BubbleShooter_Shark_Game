@@ -62,7 +62,7 @@ class Game {
                 }
 
                 if (this.sharkSpeed > 0.3) {
-                    this.sharkSpeed -= 0.05;
+                    this.sharkSpeed -= 0.1;
                     console.log(this.sharkSpeed);
                 }
                 window.setTimeout(loopShark, loopTimingShark);
@@ -104,7 +104,7 @@ class Game {
                 }
 
                 if (this.dropBallSpeed > 0.3) {
-                    this.dropBallSpeed -= 0.05;
+                    this.dropBallSpeed -= 0.1;
                     console.log(this.dropBallSpeed);
                 }
 
@@ -134,13 +134,13 @@ class Game {
         this.backgroundMusic = document.getElementById("game-background");
         this.startBtnEl = document.getElementById("start-game");
         this.sharkCount = 3;
-        this.sharkSpeed = 2.5;
+        this.sharkSpeed = 10;
         this.score = 0;
         this.missedCount = 0;
         this.hitBySharkCount = 0;
         this.totalFailsCount = 0;
         this.ballCount = 3;
-        this.dropBallSpeed = 2.5;
+        this.dropBallSpeed = 10;
         this.gameOver = false;
     }
 
@@ -219,7 +219,7 @@ class Game {
                 clearInterval();
                 sharkEl.remove();
             } else {
-                currentLeft++;
+                currentLeft += 2;
                 sharkEl.style.left = currentLeft + "px";
             }
         }, speed);
@@ -262,7 +262,7 @@ class Game {
                 this.totalFailsCount += 1;
                 this.totalFailsEl.textContent = this.totalFailsCount.toString();
             } else {
-                currentTop++;
+                currentTop += 2;
                 ballEl.style.top = currentTop + "px";
             }
         }, speed);
