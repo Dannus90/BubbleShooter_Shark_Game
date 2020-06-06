@@ -57,8 +57,13 @@ class Game {
                         return;
                     }
                 }
-                if (loopTimingShark > 200) {
+                if (loopTimingShark > 1000) {
                     loopTimingShark -= 20;
+                }
+
+                if (this.sharkSpeed > 0.3) {
+                    this.sharkSpeed -= 0.05;
+                    console.log(this.sharkSpeed);
                 }
                 window.setTimeout(loopShark, loopTimingShark);
             } else {
@@ -94,8 +99,13 @@ class Game {
                         return;
                     }
                 }
-                if (loopTimingBall > 200) {
+                if (loopTimingBall > 1000) {
                     loopTimingBall -= 20;
+                }
+
+                if (this.dropBallSpeed > 0.3) {
+                    this.dropBallSpeed -= 0.05;
+                    console.log(this.dropBallSpeed);
                 }
 
                 window.setTimeout(loopBall, loopTimingBall);
@@ -124,13 +134,13 @@ class Game {
         this.backgroundMusic = document.getElementById("game-background");
         this.startBtnEl = document.getElementById("start-game");
         this.sharkCount = 3;
-        this.sharkSpeed = 2;
+        this.sharkSpeed = 2.5;
         this.score = 0;
         this.missedCount = 0;
         this.hitBySharkCount = 0;
         this.totalFailsCount = 0;
         this.ballCount = 3;
-        this.dropBallSpeed = 2;
+        this.dropBallSpeed = 2.5;
         this.gameOver = false;
     }
 
