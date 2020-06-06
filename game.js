@@ -57,7 +57,9 @@ class Game {
                         return;
                     }
                 }
-                loopTimingShark -= 20;
+                if (loopTimingShark > 200) {
+                    loopTimingShark -= 20;
+                }
                 window.setTimeout(loopShark, loopTimingShark);
             } else {
                 return;
@@ -92,7 +94,9 @@ class Game {
                         return;
                     }
                 }
-                loopTimingBall -= 20;
+                if (loopTimingBall > 200) {
+                    loopTimingBall -= 20;
+                }
 
                 window.setTimeout(loopBall, loopTimingBall);
             } else {
