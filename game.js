@@ -253,7 +253,7 @@ class Game {
 
         //Doing like this to clear the intervall
         const interval = setInterval(() => {
-            if (endPos === currentTop) {
+            if (endPos <= currentTop) {
                 clearInterval(interval);
                 this.missedAudio.play();
                 ballEl.remove();
