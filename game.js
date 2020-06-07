@@ -9,6 +9,7 @@ class Game {
         this.backgroundMusic.play();
         this.startBtnEl.removeEventListener("click", this.startGame);
         this.startBtnEl.remove();
+        this.gameInformationEl.classList.add("game-info-hide");
 
         for (let i = 0; i < this.sharkCount; i++) {
             if (this.gameOver === false) {
@@ -63,7 +64,6 @@ class Game {
 
                 if (this.sharkSpeed > 0.3) {
                     this.sharkSpeed -= 0.1;
-                    console.log(this.sharkSpeed);
                 }
                 window.setTimeout(loopShark, loopTimingShark);
             } else {
@@ -105,7 +105,6 @@ class Game {
 
                 if (this.dropBallSpeed > 0.3) {
                     this.dropBallSpeed -= 0.1;
-                    console.log(this.dropBallSpeed);
                 }
 
                 window.setTimeout(loopBall, loopTimingBall);
@@ -125,6 +124,7 @@ class Game {
         this.totalFailsEl = document.getElementById("total-fails");
         this.missedScoreEl = document.getElementById("missed-score");
         this.hitBySharkEl = document.getElementById("hit-by-shark");
+        this.gameInformationEl = document.getElementById("game-info");
         this.containerHeight = this.container.offsetHeight;
         this.containerWidth = this.container.offsetWidth;
         // Variation of it
@@ -160,7 +160,10 @@ class Game {
         this.startBtnEl.addEventListener("click", () =>
             this.gameEndedRemover()
         );
+        this.gameInformationEl.classList.remove("game-info-hide");
 
+        // this.shootingAudio.pause();
+        // this.missedAudio.pause();
         this.backgroundMusic.pause();
     }
 

@@ -252,3 +252,52 @@ body {
     right: 35.5%;
     font-weight: bold;
 }
+
+/* Game Info */
+.game-info {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 15rem;
+    z-index: 10;
+    padding: 2rem;
+
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.4);
+    border-bottom-right-radius: 1rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1170px) {
+    .game-info {
+        left: 50%;
+        right: 50%;
+        top: 75%;
+        transform: translate(-50%, -50%);
+        border-radius: 1rem;
+    }
+}
+
+.game-info p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.1rem;
+    margin-top: 0;
+}
+
+.game-info h3 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.game-info-hide {
+    display: none;
+    visibility: hidden;
+}
