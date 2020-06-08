@@ -174,7 +174,11 @@ class Game {
         this.missedCount = 0;
         this.hitBySharkCount = 0;
         this.totalFailsCount = 0;
+        this.sharkSpeed = 10;
+        this.dropBallSpeed = 10;
         this.score = 0;
+        this.loopTimingShark = 3250;
+        this.loopTimingBall = 3250;
         this.hitBySharkEl.textContent = this.hitBySharkCount.toString();
         this.totalFailsEl.textContent = this.totalFailsCount.toString();
         this.missedScoreEl.textContent = this.missedCount.toString();
